@@ -6,15 +6,15 @@ class PersonCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // numLikes: this.props.likes
+      userAge: this.props.age
       // for birthday
     }
 
   }
 
-  // like = e => {
-  //   this.setState({ numLikes: this.state.numLikes + 1 });
-  // }
+  ageUp = e => {
+    this.setState({ userAge: this.state.userAge + 1 });
+  }
 
   render() {
     return (
@@ -22,10 +22,10 @@ class PersonCard extends Component {
         <div className="card tall">
           <div className="card-header bg-dark text-light">{this.props.lastName}, {this.props.firstName}</div>
           <div className="card-body">
-            <p>Age: {this.props.age}</p>
+            <p>Age: {this.state.userAge}</p>
             <p>Hair Color: {this.props.hairColor}</p>
             
-            {/* <button className="btn btn-outline-info btn-block at-bottom mt-auto mb-0" onClick={this.like}>{this.state.numLikes} Likes</button> */}
+            <button className="btn btn-outline-success btn-block at-bottom mt-auto mb-0" onClick={this.ageUp}>Birthday Button for {this.props.firstName} {this.props.lastName}</button>
           </div>
         </div>
       </div>
